@@ -13,7 +13,7 @@ const Quote = mongoose.model('Quotes', quoteSchema);
 
 quoteSchema.set('toJSON', { virtuals: true });
 
-QuoteModel.createUser = (quoteData) => {
+QuoteModel.createQuote = (quoteData) => {
   const quote = new Quote(quoteData);
   return quote.save();
 };

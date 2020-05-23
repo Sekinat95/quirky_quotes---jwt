@@ -6,7 +6,7 @@ const QuotesController = {};
 
 
 QuotesController.insert = (req, res) => {
-  QuotesModel.createUser(req.body)
+  QuotesModel.createQuote(req.body)
   res.render('dummy', {
     content: `quote of ${req.body.author} saved in database`
   })
@@ -28,4 +28,18 @@ QuotesController.list = (req, res) => {
   });
 };
 
+//middleware to authenticate token
+QuotesController.authenticateToken = (req, res, next)=>{
+  const authHeader = req.headers['authorization'] // has the format: Bearer TOKEN
+  const token = authHeader && authHeader.split(' ')[1] //split bearer and token with a space. get token(second param)
+ // Bearer TOKEN
+ if(token==null) return res.sendStatus(401)
+
+ jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
+     if(err) return res.sendStatus(403)
+
+     req.user = user
+     next()
+ })
+}
 export default QuotesController;
