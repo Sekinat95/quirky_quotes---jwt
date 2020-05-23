@@ -20,3 +20,15 @@ POST http://localhost:8080/login
   "email": "sekinat95@gmail.com",
   "password": "sekinat95"
 }
+
+###
+POST http://localhost:8080/quotes/
+Content-Type: application/json
+
+{
+  "message": "test",
+  "author": "test"
+}
+
+###
+GET http://localhost:8080/quotes/all
