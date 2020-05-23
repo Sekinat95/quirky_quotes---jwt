@@ -1,0 +1,22 @@
+###
+POST http://localhost:8080/users/
+Content-Type: application/json
+
+{
+  "name": "sekinah yahya",
+  "email": "sekinat95@gmail.com",
+  "password": "sekinat95"
+}
+###
+GET http://localhost:8080/users/all
+
+###
+GET http://localhost:8080/
+
+###
+POST http://localhost:8080/login
+
+{
+  "email": "sekinat95@gmail.com",
+  "password": "sekinat95"
+}

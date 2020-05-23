@@ -23,6 +23,7 @@ app.use((req, res, next) => {
         return next();
     }
 });
+
 app.set('views', path.join(__dirname,'views'))
 app.engine('handlebars',exphbs({defaultLayout: 'main'}))
 app.set('view engine', 'handlebars')

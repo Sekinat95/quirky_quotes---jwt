@@ -1,4 +1,5 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
+
 let count = 0;
 
 const options = {
@@ -26,4 +27,4 @@ const connectWithRetry = () => {
 
 connectWithRetry();
 
-exports.mongoose = mongoose;
+export default mongoose;
