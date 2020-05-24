@@ -14,10 +14,10 @@ const options = {
     useUnifiedTopology: true
     
 };
-
+// mongodb://localhost:27017/quirkyquotes
 const connectWithRetry = () => {
     console.log('MongoDB connection with retry')
-    mongoose.connect("mongodb://localhost:27017/quirkyquotes", options).then(()=>{
+    mongoose.connect("mongodb://sekinat:quotes123@ds351807.mlab.com:51807/quirkyquotes", options).then(()=>{
         console.log('MongoDB is connected')
     }).catch(err=>{
         console.log('MongoDB connection unsuccessful, retry after 5 seconds. ', ++count);
