@@ -9,10 +9,11 @@ const router = Router();
 //pages
 router.get('', pagesController.goHome);
 router.get('/login', pagesController.getLogin);
-router.get('/signin', pagesController.goHome);
+router.get('/signup', pagesController.goHome);
 
 //auth
 router.post('/login', authController.login)
+router.post('/signup', authController.signup)
 router.delete('/logout', authController.logout)
 //routes
 router.use('/users', userRouter);

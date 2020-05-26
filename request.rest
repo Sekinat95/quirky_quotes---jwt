@@ -32,3 +32,13 @@ Content-Type: application/json
 
 ###
 GET http://localhost:8080/quotes/all
+
+###
+
+POST http://localhost:8080/signup
+
+{
+  "name": "sekinat",
+  "email": "sekinat95@gmail.com",
+  "password": "sekinat95"
+}

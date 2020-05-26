@@ -6,8 +6,8 @@ const UserModel = {};
 
 const userSchema = new Schema({
   name: String,
-  email: String,
-  password: String
+  email: { type: String, unique: true, required: true },
+  password: { type: String, required: true }
 });
 
 const User = mongoose.model('Users', userSchema);
@@ -39,5 +39,9 @@ UserModel.findByEmail = (email) => {
   return User.find({email: email});
 };
 
-
+UserModel.findOne = (email) => new Promise((resolve) => {
+  User.findOne({ email }).then((result) => {
+    resolve(result);
+  });
+});
 export default UserModel;
